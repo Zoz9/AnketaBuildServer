@@ -28,10 +28,11 @@ public class Flower implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_flower;
+    @Column(name = "id_flower")
+    private int id;
 
     public int getId() {
-        return id_flower;
+        return id;
     }
 
     
@@ -120,14 +121,14 @@ public class Flower implements Serializable {
 
     
     
-    public void setId(int id_flower) {
-        this.id_flower = id_flower;
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) id_flower;
+        hash += (int) id;
         return hash;
     }
 
@@ -138,7 +139,7 @@ public class Flower implements Serializable {
             return false;
         }
         Flower other = (Flower) object;
-        if (this.id_flower != other.id_flower) {
+        if (this.id != other.id) {
             return false;
         }
         return true;
@@ -146,7 +147,7 @@ public class Flower implements Serializable {
 
     @Override
     public String toString() {
-        return "entitys.Flower[ id=" + id_flower + " ]";
+        return "entitys.Flower[ id=" + id + " ]";
     }
     
 }

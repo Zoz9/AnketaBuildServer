@@ -25,10 +25,10 @@ public class User implements Serializable {
     @Column(name = "id_user")
     private int id;
 
-    @Column(name = "user")
+    @Column(name = "user", nullable = false, unique = true)
     private String user;
     
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
     public User() {
